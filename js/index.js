@@ -1,5 +1,5 @@
-$(document).load(function(){
-    $('#my_iframe').load(function(){
+$(document).on("load",function(){
+    $('#my_iframe').on("load",function(){
         console.log("my_iframe loaded!");
         window.addEventListener("message", (event) => {
             var data = event.data;
