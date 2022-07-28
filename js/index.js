@@ -1,6 +1,10 @@
 $(document).load(function(){
     $('#my_iframe').load(function(){
-        console.log("hey");
-        $(this).contents().find('head').html('<base href="https://www.chicatelegram.com" target="_PARENT"></base>');
+        console.log("my_iframe loaded!");
+        window.addEventListener("message", (event) => {
+            var data = event.data;
+            console.log("Child is sending an event!")
+            console.log(data);
+          });
     });
 })
