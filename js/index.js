@@ -1,10 +1,10 @@
-$(document).on("load",function(){
-    $('#my_iframe').on("load",function(){
-        console.log("my_iframe loaded!");
+$(document).ready(function(){
+    $('#my_iframe').ready(function(){
         window.addEventListener("message", (event) => {
             var data = event.data;
-            console.log("Child is sending an event!")
-            console.log(data);
-          });
+            if (data.type == 'link'){
+                window.location = data.content
+            }
+        },false);
     });
 })
